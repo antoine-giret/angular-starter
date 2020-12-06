@@ -1,8 +1,8 @@
-import { ActionReducerMap, MetaReducer, Store } from '@ngrx/store';
+import { ActionReducerMap, MetaReducer } from '@ngrx/store';
 
 import { environment } from '../../environments/environment';
 
-import { userReducer, UserState } from './user';
+import { userReducer, UserState } from './user/reducer';
 
 export type RootState = { user: UserState };
 

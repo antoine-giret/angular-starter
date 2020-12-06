@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
     "@ngrx/store": "^10.1.0",
+    "ngx-cookie-service": "^11.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
@@ -48,7 +49,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint --fix",
+      "pre-commit": "ng lint --fix",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }

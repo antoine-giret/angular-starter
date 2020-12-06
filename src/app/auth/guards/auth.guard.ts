@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { RootState } from '../../reducers';
+import { RootState } from '../../store';
 
 @Injectable({
   providedIn: 'root'

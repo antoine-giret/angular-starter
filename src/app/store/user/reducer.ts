@@ -1,6 +1,8 @@
-import { Action, ActionReducer, createReducer } from '@ngrx/store';
+import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 
-import { User } from '../user/models';
+import { User } from '../../user/models';
+
+import { updateCurrentUser } from './actions';
 
 export interface UserState {
   current: User | null | undefined;
@@ -12,4 +14,5 @@ const initialState: UserState = {
 
 export const userReducer: ActionReducer<UserState, Action> = createReducer<UserState, Action>(
   initialState,
+  on(updateCurrentUser, (state, { current }) => ({ ...state, current }))
 );
