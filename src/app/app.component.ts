@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
 import { RootState } from './store';
-import { updateCurrentUser } from './store/user/actions';
 import { selectCurrentUser } from './store/user/selectors';
 import { UserService } from './user/services/user.service';
 
@@ -17,11 +16,6 @@ export class AppComponent implements OnInit {
   constructor(private store: Store<RootState>, private userService: UserService) {}
 
   ngOnInit(): void {
-    this.getCurrentUser();
-  }
-
-  async getCurrentUser(): Promise<void> {
-    const user = await this.userService.getCurrent();
-    this.store.dispatch(updateCurrentUser({ current: user }));
+    this.userService.getCurrent();
   }
 }

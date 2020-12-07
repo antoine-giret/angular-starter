@@ -1,25 +1,35 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, Subscription } from 'rxjs';
 
 import { RootState } from '../../store';
+import { selectCurrentUser } from '../../store/user/selectors';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GuestGuard implements CanActivate {
+  private subscription: Subscription | undefined;
+
   constructor(private router: Router, private store: Store<RootState>) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.store.pipe(select('user'), map(({ current }) => {
-      if (!current) { return true; }
+    return new Promise((resolve) => {
+      this.unsubscribe();
 
-      return this.router.parseUrl('/');
-    }));
+      this.subscription = this.store.pipe(select(selectCurrentUser)).subscribe((user) => {
+        if (user !== undefined) {
+          resolve(!user ? true : this.router.parseUrl('/'));
+          this.unsubscribe();
+        }
+      });
+    });
   }
 
+  unsubscribe(): void {
+    if (this.subscription) { this.subscription.unsubscribe(); }
+  }
 }

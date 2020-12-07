@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private titleService: Title) { }
+  constructor(private titleService: Title) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Angular Starter');

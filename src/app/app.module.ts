@@ -6,6 +6,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
+import { DefaultLayoutComponent } from './layouts/default/default.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { reducers, metaReducers } from './store';
@@ -14,7 +15,8 @@ import { reducers, metaReducers } from './store';
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DefaultLayoutComponent
   ],
   imports: [
     BrowserModule,
