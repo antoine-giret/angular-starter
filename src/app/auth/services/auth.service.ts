@@ -18,7 +18,7 @@ export class AuthService {
     private userService: UserService
   ) {}
 
-  login(): Promise<boolean> {
+  login(email: string, password: string): Promise<boolean> {
     // fake API call
     return new Promise((resolve, reject) => {
       setTimeout(async () => {

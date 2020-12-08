@@ -17,7 +17,7 @@ export class UserService {
     return new Promise((resolve) => {
       setTimeout(() => {
         const token = this.cookieService.get('angular_starter_access_token');
-        const current = token ? { firstName: 'Foo', lastName: 'Bar' } : null;
+        const current = token ? { firstName: 'Foo', lastName: 'Bar', email: 'foo@bar.com' } : null;
 
         this.store.dispatch(updateCurrentUser({ current }));
 

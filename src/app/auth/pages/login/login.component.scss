@@ -1,0 +1,35 @@
+.login-card-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: 16px;
+}
+
+form {
+  max-width: 100%;
+  width: 400px;
+}
+
+.login-card {
+  width: calc(100% - 32px)
+}
+
+.login-card-content {
+  margin-bottom: 0;
+  padding-top: 24px;
+}
+
+.login-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-form-field-suffix {
+  align-self: center;
+}
