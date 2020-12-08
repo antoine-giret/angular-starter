@@ -28,7 +28,7 @@ export class AuthService {
 
         if (user) {
           this.cookieService.set('angular_starter_access_token', 'test');
-          this.router.navigate(['/']);
+          this.router.navigate(['/profile']);
           resolve(true);
         } else {
           reject(new Error('[AuthService] login failed'));
@@ -43,7 +43,7 @@ export class AuthService {
       setTimeout(async () => {
         this.store.dispatch(updateCurrentUser({ current: null }));
         this.cookieService.delete('angular_starter_access_token');
-        this.router.navigate(['/login']);
+        window.location.reload();
 
         resolve(true);
       }, 200);

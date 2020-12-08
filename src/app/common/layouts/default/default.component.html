@@ -1,12 +1,15 @@
 <header>
   <mat-toolbar>
-    <h1>Angular Starter</h1>
+    <h1>
+      <a routerLink="/">Angular Starter</a>
+    </h1>
     <div class="spacer"></div>
     <ng-container *ngIf="currentUser$ | async; else guest">
       <button mat-button [matMenuTriggerFor]="userMenu" aria-label="User menu">
         {{(currentUser$ | async)?.firstName}}
       </button>
       <mat-menu #userMenu="matMenu">
+        <a mat-menu-item routerLink="/profile">Profile</a>
         <button mat-menu-item (click)="handleLogout()">Logout</button>
       </mat-menu>
     </ng-container>

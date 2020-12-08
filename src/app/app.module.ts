@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoadingComponent } from './pages/loading/loading.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { reducers, metaReducers } from './store';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { reducers, metaReducers } from './store';
     BrowserAnimationsModule,
     CommonModule,
     AuthModule,
+    UserModule,
     AppRoutingModule, // has to be after routing modules
     StoreModule.forRoot({}, {}),
     StoreModule.forRoot(reducers, {
