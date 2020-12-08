@@ -1,4 +1,6 @@
-<p *ngIf="(currentUser$ | async) === undefined; else ready">Loading</p>
+<ng-container *ngIf="(currentUser$ | async) === undefined; else ready">
+  <app-loading></app-loading>
+</ng-container>
 <ng-template #ready>
   <router-outlet></router-outlet>
 </ng-template>

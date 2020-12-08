@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { HomeComponent } from './pages/home/home.component';
+import { LoadingComponent } from './pages/loading/loading.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { reducers, metaReducers } from './store';
 
@@ -16,7 +17,8 @@ import { reducers, metaReducers } from './store';
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
