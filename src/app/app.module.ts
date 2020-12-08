@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -20,6 +21,7 @@ import { reducers, metaReducers } from './store';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AuthModule,
     AppRoutingModule, // has to be after routing modules
     StoreModule.forRoot({}, {}),
