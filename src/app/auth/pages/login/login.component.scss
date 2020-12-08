@@ -24,6 +24,10 @@ form {
 .login-card-actions {
   display: flex;
   justify-content: flex-end;
+
+  button {
+    text-transform: uppercase;
+  }
 }
 
 .login-form-field {

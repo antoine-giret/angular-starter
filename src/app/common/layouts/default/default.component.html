@@ -9,12 +9,12 @@
         {{(currentUser$ | async)?.firstName}}
       </button>
       <mat-menu #userMenu="matMenu">
-        <a mat-menu-item routerLink="/profile">Profile</a>
-        <button mat-menu-item (click)="handleLogout()">Logout</button>
+        <a i18n mat-menu-item routerLink="/profile">Profile</a>
+        <button i18n mat-menu-item (click)="handleLogout()">Logout</button>
       </mat-menu>
     </ng-container>
     <ng-template #guest>
-      <a mat-button routerLink="/login">Sign in</a>
+      <a i18n mat-button routerLink="/login">Sign In</a>
     </ng-template>
   </mat-toolbar>
 </header>
